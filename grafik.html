@@ -14,111 +14,95 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.6.2/chart.min.js" integrity="sha512-tMabqarPtykgDtdtSqCL3uLVM0gS1ZkUAVhRFu1vSEFgvB73niFQWJuvviDyBGBH22Lcau4rHB5p2K2T0Xvr6Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.0.0"></script>
     <script>
-    
-
-    window.chartColors = {
-        red: 'rgb(250, 60, 73)',
-        orange: 'rgb(255, 159, 64)',
-        yellow: 'rgb(255, 205, 86)',
-        green: 'rgb(5, 176, 39)',
-        blue: 'rgb(0, 25, 186)',
-        purple: 'rgb(153, 102, 255)',
-        grey: 'rgb(201, 203, 207)'
-    };
-
-    
-
-    
-    
-    $(document).ready(function() {
-        $(".isi").append("<canvas id='grafik_penduduk' style='margin: auto; width: 100%;'></canvas>");
-       
-        var chartPenduduk = {
-            labels: [ ...bulan ],
-            datasets: [
-            {
-                label: '',
-                backgroundColor: window.chartColors.orange,
-                data: [],
-                type: 'line',
-                borderColor: window.chartColors.orange,
-                pointRadius: 0,
-                fill: false,
-                datalabels: {
-                    color: 'orange'
-                }
-            },{
-                label: '',
-                backgroundColor: window.chartColors.blue,
-                data: [],
-                datalabels: {
-                    color: 'white'
-                }
-            },{
-                label: '',
-                backgroundColor: window.chartColors.red,
-                data: [],
-                datalabels: {
-                    color: 'white'
-                }
-            }]
-        };
-
-        var ctx = document.getElementById('grafik_penduduk').getContext('2d');
-        window.myBar = new Chart(ctx, {
-            type: 'bar',
-            data: chartPenduduk,
-            plugins: [ChartDataLabels],
-            options: {
-                plugins: {
-                    title: {
-                        display: true,
-                        text: 
-                    },
+        $(document).ready(function() {
+            $(".isi").append("<canvas id='grafik_penduduk' style='margin: auto; width: 100%;'></canvas>");
+        
+            var chartPenduduk = {
+                labels: [ ...bulan ],
+                datasets: [
+                {
+                    label: '',
+                    backgroundColor: window.chartColors.orange,
+                    data: [],
+                    type: 'line',
+                    borderColor: window.chartColors.orange,
+                    pointRadius: 0,
+                    fill: false,
                     datalabels: {
-                        display: true,
-                        align: 'center',
-                        anchor: 'center',
-                        formatter: function(value, index, values) {
-                            if(value > 0) {
-                                return value;
-                            }else{
-                                value = "";
-                                return value;
+                        color: 'orange'
+                    }
+                },{
+                    label: '',
+                    backgroundColor: window.chartColors.blue,
+                    data: [],
+                    datalabels: {
+                        color: 'white'
+                    }
+                },{
+                    label: '',
+                    backgroundColor: window.chartColors.red,
+                    data: [],
+                    datalabels: {
+                        color: 'white'
+                    }
+                }]
+            };
+
+            var ctx = document.getElementById('grafik_penduduk').getContext('2d');
+            window.myBar = new Chart(ctx, {
+                type: 'bar',
+                data: chartPenduduk,
+                plugins: [ChartDataLabels],
+                options: {
+                    plugins: {
+                        title: {
+                            display: true,
+                            text: ''
+                        },
+                        datalabels: {
+                            display: true,
+                            align: 'center',
+                            anchor: 'center',
+                            formatter: function(value, index, values) {
+                                if(value > 0) {
+                                    return value;
+                                }else{
+                                    value = "";
+                                    return value;
+                                }
+                            }
+                        }
+                    },
+                    tooltips: {
+                        mode: 'index',
+                        intersect: false
+                    },
+                    responsive: true,
+                    scales: {
+                        x: {
+                            stacked: true,
+                            grid: {
+                                display: false
+                            },
+                            title: {
+                                display: true,
+                                text: ''
+                            }
+                        },
+                        y: {
+                            stacked: true,
+                            grid: {
+                                display: false
+                            },
+                            title: {
+                                display: true,
+                                text: ''
                             }
                         }
                     }
-                },
-                tooltips: {
-                    mode: 'index',
-                    intersect: false
-                },
-                responsive: true,
-                scales: {
-                    x: {
-                        stacked: true,
-                        grid: {
-                            display: false
-                        },
-                        title: {
-                            display: true,
-                            text: ''
-                        }
-                    },
-                    y: {
-                        stacked: true,
-                        grid: {
-                            display: false
-                        },
-                        title: {
-                            display: true,
-                            text: ''
-                        }
-                    }
                 }
-            }
+            });
         });
-    });
 
     
     </script>
