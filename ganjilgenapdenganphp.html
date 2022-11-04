@@ -30,26 +30,23 @@ $(document).ready(function(){
   $("#angka").keyup(function() {
     var angka = $("#angka").val();
 
-    if (parseInt(angka)%2 == 1) {
-      $("#hasil").val('Ganjil');
-    }else if(parseInt(angka)%2 == 0) {
-      $("#hasil").val('Genap');
-    }else{
-      $("#hasil").val('-');
-    }
-    
+    $.ajax({
+        url: 'proses_gage.php?angka='+angka,
+        success: function(result) {
+            $("#hasil").val(result);
+        }
+    });
   });
 
   $("#angka").keydown(function() {
     var angka = $("#angka").val();
 
-    if (parseInt(angka)%2 == 1) {
-      $("#hasil").val('Ganjil');
-    }else if(parseInt(angka)%2 == 0) {
-      $("#hasil").val('Genap');
-    }else{
-      $("#hasil").val('-');
-    }
+    $.ajax({
+        url: 'proses_gage.php?angka='+angka,
+        success: function(result) {
+            $("#hasil").val(result);
+        }
+    });
   });
 });
 </script>

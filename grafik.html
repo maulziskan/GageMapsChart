@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,55 +7,94 @@
 
 </head>
 <body>
-    <div class="isi"></div>	
-
+    <div class="isi">
+        <canvas id='grafik_penduduk1' style='margin: auto; width: 90%;'></canvas>
+        <br/>
+        <br/>
+        <canvas id='grafik_penduduk2' style='margin: auto; width: 90%;'></canvas>
+        <br/>
+        <br/>
+        <canvas id='grafik_penduduk3' style='margin: auto; width: 90%;'></canvas>
+        <br/>
+        <br/>
+        <canvas id='grafik_penduduk4' style='margin: auto; width: 90%;'></canvas>
+        <br/>
+        <br/>
+        <canvas id='grafik_penduduk5' style='margin: auto; width: 90%;'></canvas>
+        <br/>
+        <br/>
+        <canvas id='grafik_penduduk6' style='margin: auto; width: 90%;'></canvas>
+        <br/>
+        <br/>
+        <canvas id='grafik_penduduk7' style='margin: auto; width: 90%;'></canvas>
+        <br/>
+        <br/>
+        <canvas id='grafik_penduduk8' style='margin: auto; width: 90%;'></canvas>
+        <br/>
+        <br/>
+        <canvas id='grafik_penduduk9' style='margin: auto; width: 90%;'></canvas>
+        <br/>
+        <br/>
+        <canvas id='grafik_penduduk10' style='margin: auto; width: 90%;'></canvas>
+        <br/>
+        <br/>
+        <canvas id='grafik_penduduk11' style='margin: auto; width: 90%;'></canvas>
+        <br/>
+        <br/>
+        <canvas id='grafik_penduduk12' style='margin: auto; width: 90%;'></canvas>
+        <br/>
+        <br/>
+        <canvas id='grafik_penduduk13' style='margin: auto; width: 90%;'></canvas>
+        <br/>
+        <br/>
+        <canvas id='grafik_penduduk14' style='margin: auto; width: 90%;'></canvas>
+    </div>	
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.6.2/chart.min.js" integrity="sha512-tMabqarPtykgDtdtSqCL3uLVM0gS1ZkUAVhRFu1vSEFgvB73niFQWJuvviDyBGBH22Lcau4rHB5p2K2T0Xvr6Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.0.0"></script>
     <script>
+        window.chartColors = {
+            red: 'rgb(250, 60, 73)',
+            orange: 'rgb(255, 159, 64)',
+            yellow: 'rgb(255, 205, 86)',
+            green: 'rgb(5, 176, 39)',
+            blue: 'rgb(0, 25, 186)',
+            purple: 'rgb(153, 102, 255)',
+            grey: 'rgb(201, 203, 207)'
+        };
+
         $(document).ready(function() {
-            $(".isi").append("<canvas id='grafik_penduduk' style='margin: auto; width: 100%;'></canvas>");
         
-            var chartPenduduk = {
-                labels: [ ...bulan ],
+            var chartPenduduk1 = {
+                labels: ['2019','2020','2021'],
                 datasets: [
                 {
-                    label: '',
-                    backgroundColor: window.chartColors.orange,
-                    data: [],
-                    type: 'line',
-                    borderColor: window.chartColors.orange,
-                    pointRadius: 0,
-                    fill: false,
-                    datalabels: {
-                        color: 'orange'
-                    }
-                },{
-                    label: '',
+                    label: 'Laki-laki',
                     backgroundColor: window.chartColors.blue,
-                    data: [],
+                    data: [453157, 341196, 409299],
                     datalabels: {
                         color: 'white'
                     }
                 },{
-                    label: '',
+                    label: 'Perempuan',
                     backgroundColor: window.chartColors.red,
-                    data: [],
+                    data: [435687, 319822, 389749],
                     datalabels: {
                         color: 'white'
                     }
                 }]
             };
 
-            var ctx = document.getElementById('grafik_penduduk').getContext('2d');
-            window.myBar = new Chart(ctx, {
+            var ctx1 = document.getElementById('grafik_penduduk1').getContext('2d');
+            window.myBar = new Chart(ctx1, {
                 type: 'bar',
-                data: chartPenduduk,
+                data: chartPenduduk1,
                 plugins: [ChartDataLabels],
                 options: {
                     plugins: {
                         title: {
                             display: true,
-                            text: ''
+                            text: 'Jumlah Penduduk DKI Jakarta Usia 0 - 4 Tahun'
                         },
                         datalabels: {
                             display: true,
@@ -86,7 +123,7 @@
                             },
                             title: {
                                 display: true,
-                                text: ''
+                                text: 'Tahun'
                             }
                         },
                         y: {
@@ -96,12 +133,989 @@
                             },
                             title: {
                                 display: true,
-                                text: ''
+                                text: 'Jumlah Penduduk'
                             }
                         }
                     }
                 }
             });
+
+            var chartPenduduk2 = {
+                labels: ['2019','2020','2021'],
+                datasets: [
+                {
+                    label: 'Laki-laki',
+                    backgroundColor: window.chartColors.blue,
+                    data: [478490, 461099, 409708],
+                    datalabels: {
+                        color: 'white'
+                    }
+                },{
+                    label: 'Perempuan',
+                    backgroundColor: window.chartColors.red,
+                    data: [462403, 432664, 391131],
+                    datalabels: {
+                        color: 'white'
+                    }
+                }]
+            };
+
+            var ctx2 = document.getElementById('grafik_penduduk2').getContext('2d');
+            window.myBar = new Chart(ctx2, {
+                type: 'bar',
+                data: chartPenduduk2,
+                plugins: [ChartDataLabels],
+                options: {
+                    plugins: {
+                        title: {
+                            display: true,
+                            text: 'Jumlah Penduduk DKI Jakarta Usia 5 - 9 Tahun'
+                        },
+                        datalabels: {
+                            display: true,
+                            align: 'center',
+                            anchor: 'center',
+                            formatter: function(value, index, values) {
+                                if(value > 0) {
+                                    return value;
+                                }else{
+                                    value = "";
+                                    return value;
+                                }
+                            }
+                        }
+                    },
+                    tooltips: {
+                        mode: 'index',
+                        intersect: false
+                    },
+                    responsive: true,
+                    scales: {
+                        x: {
+                            stacked: true,
+                            grid: {
+                                display: false
+                            },
+                            title: {
+                                display: true,
+                                text: 'Tahun'
+                            }
+                        },
+                        y: {
+                            stacked: true,
+                            grid: {
+                                display: false
+                            },
+                            title: {
+                                display: true,
+                                text: 'Jumlah Penduduk'
+                            }
+                        }
+                    }
+                }
+            });
+
+            var chartPenduduk3 = {
+                labels: ['2019','2020','2021'],
+                datasets: [
+                {
+                    label: 'Laki-laki',
+                    backgroundColor: window.chartColors.blue,
+                    data: [404210, 450271, 416558],
+                    datalabels: {
+                        color: 'white'
+                    }
+                },{
+                    label: 'Perempuan',
+                    backgroundColor: window.chartColors.red,
+                    data: [380844, 424594, 396706],
+                    datalabels: {
+                        color: 'white'
+                    }
+                }]
+            };
+
+            var ctx3 = document.getElementById('grafik_penduduk3').getContext('2d');
+            window.myBar = new Chart(ctx3, {
+                type: 'bar',
+                data: chartPenduduk3,
+                plugins: [ChartDataLabels],
+                options: {
+                    plugins: {
+                        title: {
+                            display: true,
+                            text: 'Jumlah Penduduk DKI Jakarta Usia 10 - 14 Tahun'
+                        },
+                        datalabels: {
+                            display: true,
+                            align: 'center',
+                            anchor: 'center',
+                            formatter: function(value, index, values) {
+                                if(value > 0) {
+                                    return value;
+                                }else{
+                                    value = "";
+                                    return value;
+                                }
+                            }
+                        }
+                    },
+                    tooltips: {
+                        mode: 'index',
+                        intersect: false
+                    },
+                    responsive: true,
+                    scales: {
+                        x: {
+                            stacked: true,
+                            grid: {
+                                display: false
+                            },
+                            title: {
+                                display: true,
+                                text: 'Tahun'
+                            }
+                        },
+                        y: {
+                            stacked: true,
+                            grid: {
+                                display: false
+                            },
+                            title: {
+                                display: true,
+                                text: 'Jumlah Penduduk'
+                            }
+                        }
+                    }
+                }
+            });
+
+            var chartPenduduk4 = {
+                labels: ['2019','2020','2021'],
+                datasets: [
+                {
+                    label: 'Laki-laki',
+                    backgroundColor: window.chartColors.blue,
+                    data: [362525, 424040, 425852],
+                    datalabels: {
+                        color: 'white'
+                    }
+                },{
+                    label: 'Perempuan',
+                    backgroundColor: window.chartColors.red,
+                    data: [357569, 401788, 408996],
+                    datalabels: {
+                        color: 'white'
+                    }
+                }]
+            };
+
+            var ctx4 = document.getElementById('grafik_penduduk4').getContext('2d');
+            window.myBar = new Chart(ctx4, {
+                type: 'bar',
+                data: chartPenduduk4,
+                plugins: [ChartDataLabels],
+                options: {
+                    plugins: {
+                        title: {
+                            display: true,
+                            text: 'Jumlah Penduduk DKI Jakarta Usia 15 - 19 Tahun'
+                        },
+                        datalabels: {
+                            display: true,
+                            align: 'center',
+                            anchor: 'center',
+                            formatter: function(value, index, values) {
+                                if(value > 0) {
+                                    return value;
+                                }else{
+                                    value = "";
+                                    return value;
+                                }
+                            }
+                        }
+                    },
+                    tooltips: {
+                        mode: 'index',
+                        intersect: false
+                    },
+                    responsive: true,
+                    scales: {
+                        x: {
+                            stacked: true,
+                            grid: {
+                                display: false
+                            },
+                            title: {
+                                display: true,
+                                text: 'Tahun'
+                            }
+                        },
+                        y: {
+                            stacked: true,
+                            grid: {
+                                display: false
+                            },
+                            title: {
+                                display: true,
+                                text: 'Jumlah Penduduk'
+                            }
+                        }
+                    }
+                }
+            });
+
+            var chartPenduduk5 = {
+                labels: ['2019','2020','2021'],
+                datasets: [
+                {
+                    label: 'Laki-laki',
+                    backgroundColor: window.chartColors.blue,
+                    data: [362699, 417744, 432874],
+                    datalabels: {
+                        color: 'white'
+                    }
+                },{
+                    label: 'Perempuan',
+                    backgroundColor: window.chartColors.red,
+                    data: [393490, 400325, 421508],
+                    datalabels: {
+                        color: 'white'
+                    }
+                }]
+            };
+
+            var ctx5 = document.getElementById('grafik_penduduk5').getContext('2d');
+            window.myBar = new Chart(ctx5, {
+                type: 'bar',
+                data: chartPenduduk5,
+                plugins: [ChartDataLabels],
+                options: {
+                    plugins: {
+                        title: {
+                            display: true,
+                            text: 'Jumlah Penduduk DKI Jakarta Usia 20 - 24 Tahun'
+                        },
+                        datalabels: {
+                            display: true,
+                            align: 'center',
+                            anchor: 'center',
+                            formatter: function(value, index, values) {
+                                if(value > 0) {
+                                    return value;
+                                }else{
+                                    value = "";
+                                    return value;
+                                }
+                            }
+                        }
+                    },
+                    tooltips: {
+                        mode: 'index',
+                        intersect: false
+                    },
+                    responsive: true,
+                    scales: {
+                        x: {
+                            stacked: true,
+                            grid: {
+                                display: false
+                            },
+                            title: {
+                                display: true,
+                                text: 'Tahun'
+                            }
+                        },
+                        y: {
+                            stacked: true,
+                            grid: {
+                                display: false
+                            },
+                            title: {
+                                display: true,
+                                text: 'Jumlah Penduduk'
+                            }
+                        }
+                    }
+                }
+            });
+
+            var chartPenduduk6 = {
+                labels: ['2019','2020','2021'],
+                datasets: [
+                {
+                    label: 'Laki-laki',
+                    backgroundColor: window.chartColors.blue,
+                    data: [445352, 418669, 435503],
+                    datalabels: {
+                        color: 'white'
+                    }
+                },{
+                    label: 'Perempuan',
+                    backgroundColor: window.chartColors.red,
+                    data: [483771, 416968, 423712],
+                    datalabels: {
+                        color: 'white'
+                    }
+                }]
+            };
+
+            var ctx6 = document.getElementById('grafik_penduduk6').getContext('2d');
+            window.myBar = new Chart(ctx6, {
+                type: 'bar',
+                data: chartPenduduk6,
+                plugins: [ChartDataLabels],
+                options: {
+                    plugins: {
+                        title: {
+                            display: true,
+                            text: 'Jumlah Penduduk DKI Jakarta Usia 25 - 29 Tahun'
+                        },
+                        datalabels: {
+                            display: true,
+                            align: 'center',
+                            anchor: 'center',
+                            formatter: function(value, index, values) {
+                                if(value > 0) {
+                                    return value;
+                                }else{
+                                    value = "";
+                                    return value;
+                                }
+                            }
+                        }
+                    },
+                    tooltips: {
+                        mode: 'index',
+                        intersect: false
+                    },
+                    responsive: true,
+                    scales: {
+                        x: {
+                            stacked: true,
+                            grid: {
+                                display: false
+                            },
+                            title: {
+                                display: true,
+                                text: 'Tahun'
+                            }
+                        },
+                        y: {
+                            stacked: true,
+                            grid: {
+                                display: false
+                            },
+                            title: {
+                                display: true,
+                                text: 'Jumlah Penduduk'
+                            }
+                        }
+                    }
+                }
+            });
+            
+            var chartPenduduk7 = {
+                labels: ['2019','2020','2021'],
+                datasets: [
+                {
+                    label: 'Laki-laki',
+                    backgroundColor: window.chartColors.blue,
+                    data: [515860, 434102, 445591],
+                    datalabels: {
+                        color: 'white'
+                    }
+                },{
+                    label: 'Perempuan',
+                    backgroundColor: window.chartColors.red,
+                    data: [507359, 427007, 437712],
+                    datalabels: {
+                        color: 'white'
+                    }
+                }]
+            };
+
+            var ctx7 = document.getElementById('grafik_penduduk7').getContext('2d');
+            window.myBar = new Chart(ctx7, {
+                type: 'bar',
+                data: chartPenduduk7,
+                plugins: [ChartDataLabels],
+                options: {
+                    plugins: {
+                        title: {
+                            display: true,
+                            text: 'Jumlah Penduduk DKI Jakarta Usia 30 - 34 Tahun'
+                        },
+                        datalabels: {
+                            display: true,
+                            align: 'center',
+                            anchor: 'center',
+                            formatter: function(value, index, values) {
+                                if(value > 0) {
+                                    return value;
+                                }else{
+                                    value = "";
+                                    return value;
+                                }
+                            }
+                        }
+                    },
+                    tooltips: {
+                        mode: 'index',
+                        intersect: false
+                    },
+                    responsive: true,
+                    scales: {
+                        x: {
+                            stacked: true,
+                            grid: {
+                                display: false
+                            },
+                            title: {
+                                display: true,
+                                text: 'Tahun'
+                            }
+                        },
+                        y: {
+                            stacked: true,
+                            grid: {
+                                display: false
+                            },
+                            title: {
+                                display: true,
+                                text: 'Jumlah Penduduk'
+                            }
+                        }
+                    }
+                }
+            });
+
+            var chartPenduduk8 = {
+                labels: ['2019','2020','2021'],
+                datasets: [
+                {
+                    label: 'Laki-laki',
+                    backgroundColor: window.chartColors.blue,
+                    data: [501470, 490160, 440327],
+                    datalabels: {
+                        color: 'white'
+                    }
+                },{
+                    label: 'Perempuan',
+                    backgroundColor: window.chartColors.red,
+                    data: [482121, 484197, 433312],
+                    datalabels: {
+                        color: 'white'
+                    }
+                }]
+            };
+
+            var ctx8 = document.getElementById('grafik_penduduk8').getContext('2d');
+            window.myBar = new Chart(ctx8, {
+                type: 'bar',
+                data: chartPenduduk8,
+                plugins: [ChartDataLabels],
+                options: {
+                    plugins: {
+                        title: {
+                            display: true,
+                            text: 'Jumlah Penduduk DKI Jakarta Usia 35 - 39 Tahun'
+                        },
+                        datalabels: {
+                            display: true,
+                            align: 'center',
+                            anchor: 'center',
+                            formatter: function(value, index, values) {
+                                if(value > 0) {
+                                    return value;
+                                }else{
+                                    value = "";
+                                    return value;
+                                }
+                            }
+                        }
+                    },
+                    tooltips: {
+                        mode: 'index',
+                        intersect: false
+                    },
+                    responsive: true,
+                    scales: {
+                        x: {
+                            stacked: true,
+                            grid: {
+                                display: false
+                            },
+                            title: {
+                                display: true,
+                                text: 'Tahun'
+                            }
+                        },
+                        y: {
+                            stacked: true,
+                            grid: {
+                                display: false
+                            },
+                            title: {
+                                display: true,
+                                text: 'Jumlah Penduduk'
+                            }
+                        }
+                    }
+                }
+            });
+
+            var chartPenduduk9 = {
+                labels: ['2019','2020','2021'],
+                datasets: [
+                {
+                    label: 'Laki-laki',
+                    backgroundColor: window.chartColors.blue,
+                    data: [439041, 458286, 431464],
+                    datalabels: {
+                        color: 'white'
+                    }
+                },{
+                    label: 'Perempuan',
+                    backgroundColor: window.chartColors.red,
+                    data: [422799, 455099, 425462],
+                    datalabels: {
+                        color: 'white'
+                    }
+                }]
+            };
+
+            var ctx9 = document.getElementById('grafik_penduduk9').getContext('2d');
+            window.myBar = new Chart(ctx9, {
+                type: 'bar',
+                data: chartPenduduk9,
+                plugins: [ChartDataLabels],
+                options: {
+                    plugins: {
+                        title: {
+                            display: true,
+                            text: 'Jumlah Penduduk DKI Jakarta Usia 40 - 44 Tahun'
+                        },
+                        datalabels: {
+                            display: true,
+                            align: 'center',
+                            anchor: 'center',
+                            formatter: function(value, index, values) {
+                                if(value > 0) {
+                                    return value;
+                                }else{
+                                    value = "";
+                                    return value;
+                                }
+                            }
+                        }
+                    },
+                    tooltips: {
+                        mode: 'index',
+                        intersect: false
+                    },
+                    responsive: true,
+                    scales: {
+                        x: {
+                            stacked: true,
+                            grid: {
+                                display: false
+                            },
+                            title: {
+                                display: true,
+                                text: 'Tahun'
+                            }
+                        },
+                        y: {
+                            stacked: true,
+                            grid: {
+                                display: false
+                            },
+                            title: {
+                                display: true,
+                                text: 'Jumlah Penduduk'
+                            }
+                        }
+                    }
+                }
+            });
+
+            var chartPenduduk10 = {
+                labels: ['2019','2020','2021'],
+                datasets: [
+                {
+                    label: 'Laki-laki',
+                    backgroundColor: window.chartColors.blue,
+                    data: [371257, 406222, 396281],
+                    datalabels: {
+                        color: 'white'
+                    }
+                },{
+                    label: 'Perempuan',
+                    backgroundColor: window.chartColors.red,
+                    data: [359079, 393122, 391664],
+                    datalabels: {
+                        color: 'white'
+                    }
+                }]
+            };
+
+            var ctx10 = document.getElementById('grafik_penduduk10').getContext('2d');
+            window.myBar = new Chart(ctx10, {
+                type: 'bar',
+                data: chartPenduduk10,
+                plugins: [ChartDataLabels],
+                options: {
+                    plugins: {
+                        title: {
+                            display: true,
+                            text: 'Jumlah Penduduk DKI Jakarta Usia 45 - 49 Tahun'
+                        },
+                        datalabels: {
+                            display: true,
+                            align: 'center',
+                            anchor: 'center',
+                            formatter: function(value, index, values) {
+                                if(value > 0) {
+                                    return value;
+                                }else{
+                                    value = "";
+                                    return value;
+                                }
+                            }
+                        }
+                    },
+                    tooltips: {
+                        mode: 'index',
+                        intersect: false
+                    },
+                    responsive: true,
+                    scales: {
+                        x: {
+                            stacked: true,
+                            grid: {
+                                display: false
+                            },
+                            title: {
+                                display: true,
+                                text: 'Tahun'
+                            }
+                        },
+                        y: {
+                            stacked: true,
+                            grid: {
+                                display: false
+                            },
+                            title: {
+                                display: true,
+                                text: 'Jumlah Penduduk'
+                            }
+                        }
+                    }
+                }
+            });
+
+            var chartPenduduk11 = {
+                labels: ['2019','2020','2021'],
+                datasets: [
+                {
+                    label: 'Laki-laki',
+                    backgroundColor: window.chartColors.blue,
+                    data: [307256, 344192, 342251],
+                    datalabels: {
+                        color: 'white'
+                    }
+                },{
+                    label: 'Perempuan',
+                    backgroundColor: window.chartColors.red,
+                    data: [302979, 326379, 338140],
+                    datalabels: {
+                        color: 'white'
+                    }
+                }]
+            };
+
+            var ctx11 = document.getElementById('grafik_penduduk11').getContext('2d');
+            window.myBar = new Chart(ctx11, {
+                type: 'bar',
+                data: chartPenduduk11,
+                plugins: [ChartDataLabels],
+                options: {
+                    plugins: {
+                        title: {
+                            display: true,
+                            text: 'Jumlah Penduduk DKI Jakarta Usia 50 - 54 Tahun'
+                        },
+                        datalabels: {
+                            display: true,
+                            align: 'center',
+                            anchor: 'center',
+                            formatter: function(value, index, values) {
+                                if(value > 0) {
+                                    return value;
+                                }else{
+                                    value = "";
+                                    return value;
+                                }
+                            }
+                        }
+                    },
+                    tooltips: {
+                        mode: 'index',
+                        intersect: false
+                    },
+                    responsive: true,
+                    scales: {
+                        x: {
+                            stacked: true,
+                            grid: {
+                                display: false
+                            },
+                            title: {
+                                display: true,
+                                text: 'Tahun'
+                            }
+                        },
+                        y: {
+                            stacked: true,
+                            grid: {
+                                display: false
+                            },
+                            title: {
+                                display: true,
+                                text: 'Jumlah Penduduk'
+                            }
+                        }
+                    }
+                }
+            });
+
+            var chartPenduduk12 = {
+                labels: ['2019','2020','2021'],
+                datasets: [
+                {
+                    label: 'Laki-laki',
+                    backgroundColor: window.chartColors.blue,
+                    data: [239492, 261019, 280483],
+                    datalabels: {
+                        color: 'white'
+                    }
+                },{
+                    label: 'Perempuan',
+                    backgroundColor: window.chartColors.red,
+                    data: [246068, 265384, 280101],
+                    datalabels: {
+                        color: 'white'
+                    }
+                }]
+            };
+
+            var ctx12 = document.getElementById('grafik_penduduk12').getContext('2d');
+            window.myBar = new Chart(ctx12, {
+                type: 'bar',
+                data: chartPenduduk12,
+                plugins: [ChartDataLabels],
+                options: {
+                    plugins: {
+                        title: {
+                            display: true,
+                            text: 'Jumlah Penduduk DKI Jakarta Usia 55 - 59 Tahun'
+                        },
+                        datalabels: {
+                            display: true,
+                            align: 'center',
+                            anchor: 'center',
+                            formatter: function(value, index, values) {
+                                if(value > 0) {
+                                    return value;
+                                }else{
+                                    value = "";
+                                    return value;
+                                }
+                            }
+                        }
+                    },
+                    tooltips: {
+                        mode: 'index',
+                        intersect: false
+                    },
+                    responsive: true,
+                    scales: {
+                        x: {
+                            stacked: true,
+                            grid: {
+                                display: false
+                            },
+                            title: {
+                                display: true,
+                                text: 'Tahun'
+                            }
+                        },
+                        y: {
+                            stacked: true,
+                            grid: {
+                                display: false
+                            },
+                            title: {
+                                display: true,
+                                text: 'Jumlah Penduduk'
+                            }
+                        }
+                    }
+                }
+            });
+
+            var chartPenduduk13 = {
+                labels: ['2019','2020','2021'],
+                datasets: [
+                {
+                    label: 'Laki-laki',
+                    backgroundColor: window.chartColors.blue,
+                    data: [175601, 182138, 208315],
+                    datalabels: {
+                        color: 'white'
+                    }
+                },{
+                    label: 'Perempuan',
+                    backgroundColor: window.chartColors.red,
+                    data: [183612, 195498, 213962],
+                    datalabels: {
+                        color: 'white'
+                    }
+                }]
+            };
+
+            var ctx13 = document.getElementById('grafik_penduduk13').getContext('2d');
+            window.myBar = new Chart(ctx13, {
+                type: 'bar',
+                data: chartPenduduk13,
+                plugins: [ChartDataLabels],
+                options: {
+                    plugins: {
+                        title: {
+                            display: true,
+                            text: 'Jumlah Penduduk DKI Jakarta Usia 60 - 64 Tahun'
+                        },
+                        datalabels: {
+                            display: true,
+                            align: 'center',
+                            anchor: 'center',
+                            formatter: function(value, index, values) {
+                                if(value > 0) {
+                                    return value;
+                                }else{
+                                    value = "";
+                                    return value;
+                                }
+                            }
+                        }
+                    },
+                    tooltips: {
+                        mode: 'index',
+                        intersect: false
+                    },
+                    responsive: true,
+                    scales: {
+                        x: {
+                            stacked: true,
+                            grid: {
+                                display: false
+                            },
+                            title: {
+                                display: true,
+                                text: 'Tahun'
+                            }
+                        },
+                        y: {
+                            stacked: true,
+                            grid: {
+                                display: false
+                            },
+                            title: {
+                                display: true,
+                                text: 'Jumlah Penduduk'
+                            }
+                        }
+                    }
+                }
+            });
+
+            var chartPenduduk14 = {
+                labels: ['2019','2020','2021'],
+                datasets: [
+                {
+                    label: 'Laki-laki',
+                    backgroundColor: window.chartColors.blue,
+                    data: [228911, 245643, 288242],
+                    datalabels: {
+                        color: 'white'
+                    }
+                },{
+                    label: 'Perempuan',
+                    backgroundColor: window.chartColors.red,
+                    data: [254708, 284460, 329873],
+                    datalabels: {
+                        color: 'white'
+                    }
+                }]
+            };
+
+            var ctx14 = document.getElementById('grafik_penduduk14').getContext('2d');
+            window.myBar = new Chart(ctx14, {
+                type: 'bar',
+                data: chartPenduduk14,
+                plugins: [ChartDataLabels],
+                options: {
+                    plugins: {
+                        title: {
+                            display: true,
+                            text: 'Jumlah Penduduk DKI Jakarta Usia 65 + Tahun'
+                        },
+                        datalabels: {
+                            display: true,
+                            align: 'center',
+                            anchor: 'center',
+                            formatter: function(value, index, values) {
+                                if(value > 0) {
+                                    return value;
+                                }else{
+                                    value = "";
+                                    return value;
+                                }
+                            }
+                        }
+                    },
+                    tooltips: {
+                        mode: 'index',
+                        intersect: false
+                    },
+                    responsive: true,
+                    scales: {
+                        x: {
+                            stacked: true,
+                            grid: {
+                                display: false
+                            },
+                            title: {
+                                display: true,
+                                text: 'Tahun'
+                            }
+                        },
+                        y: {
+                            stacked: true,
+                            grid: {
+                                display: false
+                            },
+                            title: {
+                                display: true,
+                                text: 'Jumlah Penduduk'
+                            }
+                        }
+                    }
+                }
+            });
+
+
         });
 
     
